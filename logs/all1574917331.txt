@@ -16,8 +16,14 @@ test1_change_password_00008_测试账号8 (testcase.change_password.change)
 test1_change_password_00008_测试账号8 ... ok
 test_change_msg (testcase.change_password.change)
 测试修改密码返回信息 ... ok
+test_pwstatus_code (testcase.password.pw) ... ok
+test_status_cade (testcase.send_code.sendcode_user) ... ok
+test_ali (testcase.config.config_isused) ... skipped '接口请求则不通跳过此方法'
+test_jmdl (testcase.config.config_isused) ... skipped '接口请求则不通跳过此方法'
+test_sqdl (testcase.config.config_isused) ... skipped '接口请求则不通跳过此方法'
+test_yhxy (testcase.config.config_isused) ... skipped '接口请求则不通跳过此方法'
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.118s
+Ran 15 tests in 0.112s
 
-OK
+OK (skipped=4)

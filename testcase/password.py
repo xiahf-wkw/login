@@ -1,6 +1,5 @@
 import unittest
-import requests
-from new_login.port_data.login_port import password
+from common.login_port import password
 
 
 class pw(unittest.TestCase):

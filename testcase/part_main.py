@@ -1,6 +1,6 @@
 import unittest
 import requests
-from new_login.testcase.change_password import change
+from testcase.change_password import change
 from BeautifulReport import BeautifulReport
 
 def all():
