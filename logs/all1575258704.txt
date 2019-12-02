@@ -1,0 +1,15 @@
+test1_change_password (testcase.change_password.change) ... ok
+test_change_msg (testcase.change_password.change)
+测试修改密码返回信息 ... ok
+test_pwstatus_code (testcase.password.pw) ... ok
+test_status_cade (testcase.send_code.sendcode_user) ... ok
+test_ali (testcase.config.config_isused) ... ok
+test_jmdl (testcase.config.config_isused) ... ok
+test_sqdl (testcase.config.config_isused)
+测试授权登录是否打开，成功则为打开 ... ok
+test_yhxy (testcase.config.config_isused) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.014s
+
+OK

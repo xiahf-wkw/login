@@ -19,7 +19,7 @@ def all_case():
     return suit
 
 if __name__ == '__main__':
-    with open(f'./logs/{"all"+ str(int(time.time())) }.txt',mode='a',encoding='utf8')as file:
+    with open(f'./logs/{str(datetime.date.today())+ "logs"}.txt',mode='a',encoding='utf8')as file:
         runner = unittest.TextTestRunner(stream=file,verbosity=2)
         runner.run(all_case())
     # 执行testcase中的所有用例或部分用例并生成html格式的测试报告

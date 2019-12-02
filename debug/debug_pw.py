@@ -3,6 +3,7 @@ import time
 import copy
 import hashlib
 from common.sign import *
+
 url = "http://passport.2345.com/clientapi/check/faction"
 dic = {
    "clientVer": "3",
@@ -12,6 +13,7 @@ dic = {
 
    # "sign": "b1d839eb05a48390ae090e33eca483e6"
 }
+# ftoken(dic)
 # #
 dic1 = copy.deepcopy(dic)
 list = []
@@ -26,9 +28,10 @@ md5.update(a.encode('utf8'))
 sign = md5.hexdigest()
 dic["sign"] = sign
 print(sign)
-# #
-r = requests.post(url=url,data=dic)
-print(r.json())
+#
 
-
+r = requests.post("http://passport.2345.com/clientapi/check/faction", data=dic)
+data = r.json()
+print(data)
+print(data['data']['flToken'])
 

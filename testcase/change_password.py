@@ -9,11 +9,11 @@ from common.login_port import cookiedata
 class change(unittest.TestCase):
     def tset_status_change(self):
         pass
-    @file_data("../configs/password.json")
-    def test1_change_password(self,password,mid):
+    # @file_data("../configs/password.json")
+    def test1_change_password(self):
         value = {
-                 'password' :password,
-                 'mid':mid
+                 'password' :'123456',
+                 'mid':'andloginsdk'
                  }
         change_url = requests.post("http://passport.2345.com/clientapi/nPassword/index",data=value,cookies = cookiedata,headers = pw_headers)
         change_url_json = change_url.json()

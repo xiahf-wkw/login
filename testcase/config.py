@@ -21,11 +21,12 @@ data1['uuid']='A00000A1F17A14'
 config = requests.post('http://passport.2345.com/clientapi/nLoginConfigCloud/index',data = data1)
 # 测试环境请求http，线上请求https
 
-# def test_status_code():
-#     """接口是否200"""
-#     config_request = config.json()
-#     if config_request['code'] == 200:
-#         return True
+
+def test_status_code():
+    """接口是否200"""
+    config_request = config.json()
+    if config_request['code'] == 200:
+        return True
 
 class config_isused(unittest.TestCase):
     def status_code(self):
@@ -35,6 +36,7 @@ class config_isused(unittest.TestCase):
 
     @unittest.skipUnless(status_code,"接口请求则不通跳过此方法")
     def test_sqdl(self):
+        """测试授权登录是否打开，成功则为打开"""
         config_request = config.json()
         if config_request['data']['isUnionLogin'] == True:
             return "授权登录打开"
@@ -43,6 +45,7 @@ class config_isused(unittest.TestCase):
 
     @unittest.skipUnless(status_code, "接口请求则不通跳过此方法")
     def test_jmdl(self):
+        """测试静默登录是否打开，成功则为打开"""
         config_request = config.json()
         if config_request['data']['isQuietLogin'] == True:
             return "静默登录打开"
@@ -51,6 +54,7 @@ class config_isused(unittest.TestCase):
 
     @unittest.skipUnless(status_code, "接口请求则不通跳过此方法")
     def test_ali(self):
+        """测试阿里云登录是否打开，成功则为打开"""
         config_request = config.json()
         if config_request['data']['isNeedShanyan'] == True:
             return "阿里云登录打开"
@@ -59,6 +63,7 @@ class config_isused(unittest.TestCase):
 
     @unittest.skipUnless(status_code, "接口请求则不通跳过此方法")
     def test_yhxy(self):
+        """测试用户登录是否默认打开，成功则为打开"""
         config_request = config.json()
         if config_request['data']['protocolStatus'] == True:
             return "用户协议默认打开"

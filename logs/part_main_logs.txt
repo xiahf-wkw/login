@@ -21,3 +21,26 @@ test_change_msg (testcase.change_password.change)
 Ran 9 tests in 0.118s
 
 OK
+test1_change_password_00001_测试账号1 (testcase.change_password.change)
+test1_change_password_00001_测试账号1 ... ok
+test1_change_password_00002_测试账号2 (testcase.change_password.change)
+test1_change_password_00002_测试账号2 ... ok
+test1_change_password_00003_测试账号3 (testcase.change_password.change)
+test1_change_password_00003_测试账号3 ... ok
+test1_change_password_00004_测试账号4 (testcase.change_password.change)
+test1_change_password_00004_测试账号4 ... ok
+test1_change_password_00005_测试账号5 (testcase.change_password.change)
+test1_change_password_00005_测试账号5 ... ok
+test1_change_password_00006_测试账号6 (testcase.change_password.change)
+test1_change_password_00006_测试账号6 ... ok
+test1_change_password_00007_测试账号7 (testcase.change_password.change)
+test1_change_password_00007_测试账号7 ... ok
+test1_change_password_00008_测试账号8 (testcase.change_password.change)
+test1_change_password_00008_测试账号8 ... ok
+test_change_msg (testcase.change_password.change)
+测试修改密码返回信息 ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.106s
+
+OK
