@@ -48,7 +48,6 @@ change_password = requests.post(url='http://passport.2345.com/clientapi/nPasswor
 
 data_time = datetime.datetime.now()
 un_time = time.mktime(data_time.timetuple())
-
 config_hicky = requests.post(url="http://passport.2345.com/clientapi/nLoginConfigCloud/index",
                       data = {
                         'appChannel': 'APP_CHANNEL',

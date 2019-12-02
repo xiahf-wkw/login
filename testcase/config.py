@@ -10,7 +10,7 @@ data = {
     'mid': 'andloginSDK',
     'packageName': 'com.mobile2345.uc.sample',
     'sdkVersion': '3.0.3beta1-SNAPSHOT',
-    'timestamp': "%s" % int(time.time()),
+    'timestamp': "%s" %int(time.time()),
     # 'sign': 'c878a44b8264cb57390560c0a2eccd8d',
     # 'uuid': '869633042292837'
 }
@@ -19,17 +19,21 @@ data1 = copy.deepcopy(data)
 data1['sign']= sign
 data1['uuid']='A00000A1F17A14'
 config = requests.post('http://passport.2345.com/clientapi/nLoginConfigCloud/index',data = data1)
+# 测试环境请求http，线上请求https
 
-
-def test_status_code():
-    """接口是否200"""
-    config_request = config.json()
-    if config_request['code'] == 205:
-        return True
+# def test_status_code():
+#     """接口是否200"""
+#     config_request = config.json()
+#     if config_request['code'] == 200:
+#         return True
 
 class config_isused(unittest.TestCase):
+    def status_code(self):
+        """接口是否200"""
+        config_request = config.json()
+        self.assertTrue(200,config_request['code'])
 
-    @unittest.skipUnless(test_status_code(),"接口请求则不通跳过此方法")
+    @unittest.skipUnless(status_code,"接口请求则不通跳过此方法")
     def test_sqdl(self):
         config_request = config.json()
         if config_request['data']['isUnionLogin'] == True:
@@ -37,7 +41,7 @@ class config_isused(unittest.TestCase):
         else:
             return "授权登录关闭"
 
-    @unittest.skipUnless(test_status_code(), "接口请求则不通跳过此方法")
+    @unittest.skipUnless(status_code, "接口请求则不通跳过此方法")
     def test_jmdl(self):
         config_request = config.json()
         if config_request['data']['isQuietLogin'] == True:
@@ -45,7 +49,7 @@ class config_isused(unittest.TestCase):
         else:
             return "静默登录关闭"
 
-    @unittest.skipUnless(test_status_code(), "接口请求则不通跳过此方法")
+    @unittest.skipUnless(status_code, "接口请求则不通跳过此方法")
     def test_ali(self):
         config_request = config.json()
         if config_request['data']['isNeedShanyan'] == True:
@@ -53,7 +57,7 @@ class config_isused(unittest.TestCase):
         else:
             return "阿里云登录关闭"
 
-    @unittest.skipUnless(test_status_code(), "接口请求则不通跳过此方法")
+    @unittest.skipUnless(status_code, "接口请求则不通跳过此方法")
     def test_yhxy(self):
         config_request = config.json()
         if config_request['data']['protocolStatus'] == True:
